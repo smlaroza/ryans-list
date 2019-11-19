@@ -1,7 +1,7 @@
 const router = require("express").Router()
 const db = require("../db")
 
-router.get("/", (req, rest, next) => {
+router.get("/", (req, res, next) => {
   const sql = `
 SELECT id, name, slug, parent_id 
 FROM categories

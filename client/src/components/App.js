@@ -4,7 +4,7 @@ import Categories from "./categoryList"
 import Posts from "./postList"
 import CreatePost from "./postForm"
 import Post from "./viewPost"
-import "../styles/style.css"
+import "../styles/styles.css"
 
 function App() {
   return (

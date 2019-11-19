@@ -1,2 +1,2 @@
 export { useCats } from "../redux/ducks/categories"
-export { usePost, usePosts } from "../redux/ducks/posts"
+export { usePost, usePosts, useCreatePost } from "../redux/ducks/posts"

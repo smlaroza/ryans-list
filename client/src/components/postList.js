@@ -8,6 +8,7 @@ export default (props) => {
   return (
     <div>
       <h1>Posts</h1>
+      <Link to={"/" + props.match.params.slug + "/post"}>Add Post</Link>
       {posts.map((post) => (
         <p>
           <Link to={"/post/" + post.id}>{post.name}</Link>

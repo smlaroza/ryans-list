@@ -12,7 +12,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_CATEGORIES:
-      return { ...state, users: action.payload }
+      return { ...state, categories: action.payload }
     default:
       return state
   }
@@ -31,7 +31,7 @@ const getCats = () => {
 // custom hooks
 export function useCats() {
   const categories = useSelector(
-    (appState) => appState.categoriesState.categories
+    (appState) => appState.categoryState.categories
   )
   const dispatch = useDispatch()
   useEffect(() => {

@@ -3,9 +3,9 @@ import { useCats } from "../hooks"
 import { Link } from "react-router-dom"
 
 export default (props) => {
-  const categories = useCats()
+  const { categories } = useCats()
   return (
-    <div>
+    <>
       {categories.map((cat) => (
         <div className="main">
           <Link to={"/" + cat.slug}>
@@ -18,6 +18,6 @@ export default (props) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   )
 }

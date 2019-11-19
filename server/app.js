@@ -3,8 +3,10 @@ const express = require("express")
 const postRouter = require("./routes/postRouter")
 const app = express()
 const categoryRouter = require("./routes/categoryRouter")
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+
 app.use("/categories", categoryRouter)
 app.use("/posts", postRouter)
 
