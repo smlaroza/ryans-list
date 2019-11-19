@@ -1,19 +1,11 @@
-/* .communityContainer {
-} */
-
-#community {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  color: blue;
-  cursor: pointer;
+.mainContainer {
+  width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-#subCommunity {
-  color: blue;
-  cursor: pointer;
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-
-/* .citiesContainer {
-  font-size: 15px;
-} */
