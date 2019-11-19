@@ -8,14 +8,23 @@ export default (props) => {
     <>
       {categories.map((cat) => (
         <div className="main">
-          <Link to={"/" + cat.slug}>
-            <h2>{cat.name}</h2>
-          </Link>
+          <div className="mainCat">
+            <Link className="mainCatName" to={"/" + cat.slug}>
+              <h2>{cat.name}</h2>
+            </Link>
+          </div>
           <div className="links">
             {cat.children.map((sub) => (
-              <Link to={"/" + sub.slug}>{sub.name}</Link>
+              <div className="subLink">
+                <div className="innerSubLink">
+                  <Link className="subCatName" to={"/" + sub.slug}>
+                    {sub.name}
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
+          <div></div>
         </div>
       ))}
     </>

@@ -22,17 +22,6 @@ export default (state = initalState, action) => {
   }
 }
 
-function getPosts(slug) {
-  return (dispatch) => {
-    axios.get("/posts/" + slug).then((resp) => {
-      dispatch({
-        type: GET_POSTS,
-        payload: resp.data
-      })
-    })
-  }
-}
-
 function getSinglePost(postId) {
   return (dispatch) => {
     axios.get("/post/" + postId).then((resp) => {
@@ -44,27 +33,11 @@ function getSinglePost(postId) {
   }
 }
 
-function createPost(slug, name, post, dispatch) {
-  return new Promise((resolve, reject) => {
-    axios
-      .post("/posts", { slug, name, post })
-      .then((resp) => {
-        dispatch(getPosts(slug))
-        resolve()
-      })
-      .catch((e) => {
-        reject()
-      })
-  })
-}
-
 export function usePosts(slug) {
   const posts = useSelector((appState) => appState.postState.posts)
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(getPosts(slug))
-  }, [dispatch, slug])
+  useEffect(() => {}, [dispatch, slug])
 
   return posts
 }
@@ -81,10 +54,17 @@ export function usePost(postId) {
 }
 
 export function useCreatePost(slug, name, post) {
-  const dispatch = useDispatch()
   const create = (slug, name, post) => {
-    createPost(slug, name, post, dispatch)
+    return new Promise((resolve, reject) => {
+      axios
+        .post("/posts", { slug, name, post })
+        .then((resp) => {
+          resolve()
+        })
+        .catch((e) => {
+          reject()
+        })
+    })
   }
-
   return create
 }

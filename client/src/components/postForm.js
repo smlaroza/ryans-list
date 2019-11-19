@@ -11,6 +11,8 @@ export default (props) => {
     create(props.match.params.slug, name, post).then(() => {
       props.history.push("/" + props.match.params.slug)
     })
+
+    create(props.match.params.slug, name, post, function() {})
   }
 
   return (
